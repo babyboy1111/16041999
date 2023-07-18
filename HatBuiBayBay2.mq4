@@ -40,8 +40,14 @@ datetime thoigianhientai9;
 datetime thoigianhientai10;
 datetime thoigianhientai11;
 datetime thoigianhientai12;
+datetime thoigianhientai13;
 void OnTick()
-  {
+  {  
+int hour = Hour();
+int minute = Minute();  
+if( hour >= 13 && minute >= 30 )//&& minute >= 30
+{  
+  
    //lenh buy_1  
    if (TimeCurrent()> thoigianhientai1 +Period()*43200*12)
    {   
@@ -53,7 +59,7 @@ void OnTick()
     int cmd = OP_BUY;
     double price = Ask;   
     double SL = price -2000*Point;
-    double volume = 0.01;
+    double volume = 0.05;
     double TP = price + 6000*Point; 
     int newticket = OrderSend (sym,cmd,volume,price,slip,SL,TP,comment,magic,NULL,Arrow);
     thoigianhientai1 = TimeCurrent();
@@ -80,7 +86,7 @@ void OnTick()
        int cmd = OP_SELL;
        double price = Bid;   
        double SL = price + 2000*Point;
-       double volume = 0.02;
+       double volume = 0.07;
        double TP = price - 6000*Point; 
        int newticket = OrderSend (sym,cmd,volume,price,slip,SL,TP,comment,magic,NULL,Arrow);
        thoigianhientai2 = TimeCurrent();
@@ -106,7 +112,7 @@ void OnTick()
           int cmd = OP_BUY;
           double price = Ask;   
           double SL = price - 2000*Point;
-          double volume = 0.03;
+          double volume = 0.1;
           double TP = price + 6000*Point; 
           int newticket = OrderSend (sym,cmd,volume,price,slip,SL,TP,comment,magic,NULL,Arrow);
           thoigianhientai3 = TimeCurrent();         
@@ -132,7 +138,7 @@ void OnTick()
              int cmd = OP_SELL;
              double price = Bid;   
              double SL = price + 2000*Point;
-             double volume = 0.03;
+             double volume = 0.13;
              double TP = price - 6000*Point; 
              int newticket = OrderSend (sym,cmd,volume,price,slip,SL,TP,comment,magic,NULL,Arrow);
              thoigianhientai4 = TimeCurrent();
@@ -159,7 +165,7 @@ void OnTick()
                 int cmd = OP_BUY;
                 double price = Ask;   
                 double SL = price - 2000*Point;
-                double volume = 0.05;
+                double volume = 0.17;
                 double TP = price + 6000*Point; 
                 int newticket = OrderSend (sym,cmd,volume,price,slip,SL,TP,comment,magic,NULL,Arrow);
                 thoigianhientai5 = TimeCurrent();         
@@ -186,7 +192,7 @@ void OnTick()
                    int cmd = OP_SELL;
                    double price = Bid;   
                    double SL = price + 2000*Point;
-                   double volume = 0.06;
+                   double volume = 0.23;
                    double TP = price - 6000*Point; 
                    int newticket = OrderSend (sym,cmd,volume,price,slip,SL,TP,comment,magic,NULL,Arrow);
                    thoigianhientai6 = TimeCurrent();
@@ -213,7 +219,7 @@ void OnTick()
                       int cmd = OP_BUY;
                       double price = Ask;   
                       double SL = price - 2000*Point;
-                      double volume = 0.08;
+                      double volume = 0.3;
                       double TP = price + 6000*Point; 
                       int newticket = OrderSend (sym,cmd,volume,price,slip,SL,TP,comment,magic,NULL,Arrow);
                       thoigianhientai7 = TimeCurrent();         
@@ -240,7 +246,7 @@ void OnTick()
                          int cmd = OP_SELL;
                          double price = Bid;   
                          double SL = price + 2000*Point;
-                         double volume = 0.11;
+                         double volume = 0.41;
                          double TP = price - 6000*Point; 
                          int newticket = OrderSend (sym,cmd,volume,price,slip,SL,TP,comment,magic,NULL,Arrow);
                          thoigianhientai8 = TimeCurrent();
@@ -267,7 +273,7 @@ void OnTick()
                             int cmd = OP_BUY;
                             double price = Ask;   
                             double SL = price - 2000*Point;
-                            double volume = 0.15;
+                            double volume = 0.54;
                             double TP = price + 6000*Point; 
                             int newticket = OrderSend (sym,cmd,volume,price,slip,SL,TP,comment,magic,NULL,Arrow);
                             thoigianhientai9 = TimeCurrent();         
@@ -294,7 +300,7 @@ void OnTick()
                                int cmd = OP_SELL;
                                double price = Bid;   
                                double SL = price + 2000*Point;
-                               double volume = 0.19;
+                               double volume = 0.72;
                                double TP = price - 6000*Point; 
                                int newticket = OrderSend (sym,cmd,volume,price,slip,SL,TP,comment,magic,NULL,Arrow);
                                thoigianhientai10 = TimeCurrent();
@@ -321,7 +327,7 @@ void OnTick()
                                   int cmd = OP_BUY;
                                   double price = Ask;   
                                   double SL = price - 2000*Point;
-                                  double volume = 0.19;
+                                  double volume = 0.96;
                                   double TP = price + 6000*Point; 
                                   int newticket = OrderSend (sym,cmd,volume,price,slip,SL,TP,comment,magic,NULL,Arrow);
                                   thoigianhientai11 = TimeCurrent();         
@@ -348,7 +354,7 @@ void OnTick()
                                      int cmd = OP_SELL;
                                      double price = Bid;   
                                      double SL = price + 2000*Point;
-                                     double volume = 0.24;
+                                     double volume = 1.28;
                                      double TP = price - 6000*Point; 
                                      int newticket = OrderSend (sym,cmd,volume,price,slip,SL,TP,comment,magic,NULL,Arrow);
                                      thoigianhientai12 = TimeCurrent();
@@ -396,5 +402,8 @@ void OnTick()
      }
     }
    }
+     
+}
   }
+  
 //+------------------------------------------------------------------+
